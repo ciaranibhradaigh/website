@@ -39,6 +39,17 @@
       letter-spacing:0.3px;
     }
 
+    .reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.8s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
     a{
       text-decoration:none;
       color:inherit;
@@ -90,6 +101,13 @@
       z-index:999;
       border-bottom:1px solid rgba(43,56,35,0.08);
     }
+
+    .nav-logo img{
+    height:45px;
+    width:auto;
+    opacity:0.95;
+    object-fit:contain;
+  }
 
     .nav-links{
       display:flex;
@@ -441,6 +459,7 @@
 <!-- NAV -->
 <nav>
     <div class="nav-logo">
+      <img src="seimhlogo2.png" alt="Séimh Psychotherapy">
     Séimh Psychotherapy
   </div>
   <div class="nav-links">
@@ -785,6 +804,19 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script src="https://web3forms.com/client/script.js" async defer></script>
+
+  <script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("active");
+    }
+  });
+});
+
+document.querySelectorAll(".service-card, .card, .about, .section-title")
+  .forEach(el => observer.observe(el));
+</script>
 
     <!-- FOOTER -->
 
