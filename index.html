@@ -51,6 +51,30 @@
       padding:90px 0;
     }
 
+    /* NAVBAR */
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:rgba(247,245,241,0.92);
+      backdrop-filter:blur(10px);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 40px;
+      z-index:999;
+      border-bottom:1px solid rgba(43,56,35,0.08);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+    }
+
+    .nav-links a:hover{
+      opacity:0.6;
+    }
+
     /* HERO */
 
     .hero{
@@ -64,34 +88,35 @@
       justify-content:center;
       text-align:center;
       color:white;
+      padding-top:80px;
     }
 
     .hero-content{
       max-width:850px;
       padding:20px;
+      animation:fadeInUp 1s ease;
     }
 
     .logo{
       width:180px;
+      height:180px;
+      border-radius:50%;
+      object-fit:cover;
       margin:0 auto 30px;
+      background:white;
+      padding:8px;
     }
 
     .hero h1{
       font-size:4rem;
       color:white;
-      margin-bottom:10px;
     }
 
     .tagline{
       font-size:1.3rem;
-      margin-bottom:35px;
+      margin-bottom:30px;
       font-style:italic;
       color:#f4f4f4;
-    }
-
-    .hero p{
-      font-size:1.1rem;
-      margin-bottom:35px;
     }
 
     .btn{
@@ -100,13 +125,6 @@
       color:#2b3823;
       padding:14px 30px;
       border-radius:50px;
-      font-weight:600;
-      transition:0.3s ease;
-    }
-
-    .btn:hover{
-      background:#dfe6da;
-      transform:translateY(-2px);
     }
 
     /* ABOUT */
@@ -120,7 +138,6 @@
 
     .about img{
       border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
     }
 
     .section-title{
@@ -138,23 +155,12 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:40px;
-      margin-top:40px;
     }
 
     .card{
       background:white;
       padding:35px;
       border-radius:20px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    }
-
-    .card h3{
-      margin-bottom:20px;
-      font-size:2rem;
-    }
-
-    ul{
-      padding-left:20px;
     }
 
     /* SERVICES */
@@ -163,38 +169,12 @@
       display:grid;
       grid-template-columns:repeat(3,1fr);
       gap:30px;
-      margin-top:50px;
     }
 
     .service-card{
       background:white;
-      padding:40px 30px;
+      padding:35px;
       border-radius:20px;
-      box-shadow:0 8px 25px rgba(0,0,0,0.06);
-      transition:0.3s ease;
-    }
-
-    .service-card:hover{
-      transform:translateY(-5px);
-    }
-
-    .service-card h3{
-      margin-bottom:20px;
-      font-size:2rem;
-    }
-
-    .service-card p{
-      margin-bottom:25px;
-    }
-
-    .service-btn{
-      display:inline-block;
-      margin-top:10px;
-      color:white;
-      background:#2b3823;
-      padding:12px 24px;
-      border-radius:40px;
-      font-size:0.95rem;
     }
 
     /* CTA */
@@ -203,21 +183,6 @@
       background:#2b3823;
       color:white;
       text-align:center;
-    }
-
-    .cta h2{
-      color:white;
-      margin-bottom:25px;
-      font-size:3rem;
-    }
-
-    .cta p{
-      max-width:800px;
-      margin:0 auto 35px;
-    }
-
-    .cta .btn{
-      background:white;
     }
 
     /* FEES */
@@ -232,72 +197,51 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:50px;
-      margin-top:50px;
-    }
-
-    .contact-details p{
-      margin-bottom:20px;
     }
 
     form{
       display:flex;
       flex-direction:column;
-      gap:20px;
+      gap:0;
+      background:rgba(255,255,255,0.25);
+      padding:30px;
+      border-radius:15px;
     }
 
     input,
     textarea{
-      padding:16px;
+      width:100%;
+      padding:12px;
+      margin-bottom:18px;
       border:none;
-      border-radius:12px;
-      background:#f3f3f3;
-      font-family:'Inter', sans-serif;
-      font-size:1rem;
-    }
-
-    textarea{
-      min-height:180px;
-      resize:vertical;
+      border-radius:10px;
+      font-family:'Cormorant', serif;
     }
 
     button{
+      width:100%;
+      padding:12px;
       border:none;
+      border-radius:10px;
+      background:#2b3823;
+      color:white;
       cursor:pointer;
     }
 
-    footer{
-      background:#1f291a;
-      color:#d9ddd6;
-      text-align:center;
-      padding:40px 20px;
-      font-size:0.95rem;
+    fieldset{
+      border:none;
+      padding:0;
     }
 
-    footer p{
-      margin-bottom:10px;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:900px){
-
-      .about,
-      .qual-grid,
-      .services-grid,
-      .contact-wrapper{
-        grid-template-columns:1fr;
+    /* ANIMATION */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
       }
-
-      .hero h1{
-        font-size:3rem;
-      }
-
-      .section-title{
-        font-size:2.4rem;
-      }
-
-      section{
-        padding:70px 0;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
@@ -306,323 +250,168 @@
 
 <body>
 
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="hero-content">
-
-      <img src="seimhlogo2.png" alt="Séimh Psychotherapy Logo" class="logo">
-
-      <h1>Séimh Psychotherapy</h1>
-
-      <p class="tagline">
-        A gentle, caring, safe space.<br>
-        Spás sábháilte, séimh, suaimhneach.
-      </p>
-
-      <p>
-        Séimh Counselling & Psychotherapy offers professional,
-        confidential counselling and psychotherapy in Clontarf,
-        North Dublin, for adults, adolescents, and children.
-      </p>
-
-      <a href="#contact" class="btn">
-        Book a Free Consultation
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- INTRO -->
-
-  <section>
-
-    <div class="container">
-
-      <p>
-        Located in a convenient and accessible North Dublin setting,
-        with free parking, close to Howth Junction Dart Station and
-        on the N6 bus route. This is a space where you can slow down,
-        feel heard, and explore what’s going on for you in a safe and
-        non-judgmental environment.
-      </p>
-
-      <br>
-
-      <p>
-        If you are experiencing anxiety, stress, low mood,
-        or navigating challenging times, psychotherapy can support
-        you in making sense of your experience and finding a way forward.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- ABOUT -->
-
-  <section>
-
-    <div class="container about">
-
-      <div>
-        <img src="website_head_shot.PNG" alt="Áine">
-      </div>
-
-      <div>
-
-        <h2 class="section-title">About Áine</h2>
-
-        <p>
-          Every person’s experience is unique. As a pluralistic psychotherapist,
-          I understand that each person’s experience is unique, making them
-          the experts in their own lives.
-        </p>
-
-        <br>
-
-        <p>
-          At Séimh Psychotherapy therapy is tailored to the individual needs
-          of each adult, adolescent, or child, providing a compassionate and
-          supportive environment where clients can feel safe to explore their
-          thoughts, feelings, and experiences.
-        </p>
-
-        <br>
-
-        <p>
-          The approach is neurodiverse positive, LGBTQIA+ affirming,
-          and trauma informed, meeting every individual where they are at right now.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- QUALIFICATIONS -->
-
-  <section class="qualifications">
-
-    <div class="container">
-
-      <h2 class="section-title">Qualifications</h2>
-
-      <div class="qual-grid">
-
-        <div class="card">
-
-          <h3>Education</h3>
-
-          <ul>
-            <li>MSc Pluralistic Counselling and Psychotherapy (First Class Honours)</li>
-            <li>Higher Certificate Integrative Counselling and Psychotherapy</li>
-            <li>Postgraduate Diploma in Integrative Child and Adolescent Psychotherapy</li>
-          </ul>
-
-        </div>
-
-        <div class="card">
-
-          <h3>Professional Development</h3>
-
-          <ul>
-            <li>Introduction to ACT with Compassion</li>
-            <li>Trauma Informed Therapy</li>
-            <li>Trauma, Neuroscience and Adolescence</li>
-            <li>CBT with Depression</li>
-            <li>Working Professionally Online for IACP Members</li>
-          </ul>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- SERVICES -->
-
-  <section>
-
-    <div class="container">
-
-      <h2 class="section-title">What I Offer</h2>
-
-      <div class="services-grid">
-
-        <div class="service-card">
-
-          <h3>Adult Counselling & Psychotherapy</h3>
-
-          <p>
-            Support for anxiety, depression, trauma, addiction,
-            overwhelm, chronic illness, family estrangement,
-            domestic violence, and more.
-          </p>
-
-          <a href="#" class="service-btn">Learn More</a>
-
-        </div>
-
-        <div class="service-card">
-
-          <h3>Adolescent & Teen Therapy</h3>
-
-          <p>
-            A safe and supportive therapeutic space for teenagers
-            experiencing school stress, anxiety, bullying,
-            low self-esteem, emotional regulation difficulties,
-            and identity challenges.
-          </p>
-
-          <a href="#" class="service-btn">Learn More</a>
-
-        </div>
-
-        <div class="service-card">
-
-          <h3>Child Therapy & Play Therapy</h3>
-
-          <p>
-            Child-centred counselling and play therapy helping children
-            process emotions, worries, school stress, grief,
-            behavioural difficulties, and social challenges.
-          </p>
-
-          <a href="#" class="service-btn">Learn More</a>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CTA -->
-
-  <section class="cta">
-
-    <div class="container">
-
-      <h2>What now?</h2>
-
-      <p>
-        If you are here, you are already considering taking the first important step.
-        Reach out for a free 30-minute consultation, in person or over the phone,
-        to discuss what you, your teen, or your child would like from therapy.
-      </p>
-
-      <a href="#contact" class="btn">
-        Arrange a Consultation
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- FEES -->
-
-  <section class="fees">
-
-    <div class="container">
-
-      <h2 class="section-title">Services & Fees</h2>
-
-      <p>
-        The standard fee for an individual 50-minute session is €70.
-      </p>
-
-      <br>
-
-      <p>
-        I strongly believe in social justice and equality and am committed
-        to making therapy accessible to all. A sliding scale is available
-        for individuals experiencing financial difficulty.
-      </p>
-
-      <br>
-
-      <p>
-        Assessment and review sessions with parents and carers of
-        under 18s attending therapy are 60-minute sessions and incur
-        a fee of €80.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-
-  <section id="contact">
-
-    <div class="container">
-
-      <h2 class="section-title">Contact</h2>
-
-      <div class="contact-wrapper">
-
-        <div class="contact-details">
-
-          <p>
-            <strong>Email:</strong><br>
-            aine@seimhpsychotherapy.ie
-          </p>
-
-          <p>
-            <strong>Telephone:</strong><br>
-            087 036 6021
-          </p>
-
-          <p>
-            Clontarf, North Dublin
-          </p>
-
-        </div>
-
-        <form>
-
-          <input type="text" placeholder="Your Name" required>
-
-          <input type="email" placeholder="Your Email" required>
-
-          <input type="text" placeholder="Phone Number (optional)">
-
-          <textarea placeholder="Your Message"></textarea>
-
-          <button type="submit" class="btn">
-            Send Message
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <p>Séimh Counselling & Psychotherapy</p>
-
-    <p>
-      Neurodiverse Positive • LGBTQIA+ Affirming • Trauma Informed
+<!-- NAV -->
+<nav>
+  <div><strong>Séimh</strong></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#fees">Fees</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+
+    <img src="seimhlogo2.png" class="logo" alt="logo">
+
+    <h1>Séimh Psychotherapy</h1>
+
+    <p class="tagline">
+      A gentle, caring, safe space.<br>
+      Spás sábháilte, séimh, suaimhneach.
     </p>
 
-    <p>
-      © 2026 Séimh Psychotherapy
-    </p>
+    <a href="#contact" class="btn">Book a Free Consultation</a>
 
-  </footer>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about">
+
+    <img src="website_head_shot.PNG" alt="Áine">
+
+    <div>
+      <h2 class="section-title">About Áine</h2>
+      <p>Every person’s experience is unique...</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUALIFICATIONS -->
+<section class="qualifications">
+  <div class="container qual-grid">
+
+    <div class="card">
+      <h3>Education</h3>
+      <ul>
+        <li>MSc Pluralistic Counselling</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>CPD</h3>
+      <ul>
+        <li>Trauma Informed Therapy</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container services-grid">
+
+    <div class="service-card">
+      <h3>Adults</h3>
+    </div>
+
+    <div class="service-card">
+      <h3>Teens</h3>
+    </div>
+
+    <div class="service-card">
+      <h3>Children</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEES -->
+<section id="fees" class="fees">
+  <div class="container">
+    <h2 class="section-title">Services & Fees</h2>
+    <p>€70 per session...</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container contact-wrapper">
+
+    <div>
+      <p>Email: aine@seimhpsychotherapy.ie</p>
+      <p>Phone: 087 0366021</p>
+    </div>
+
+    <!-- WEB3FORMS -->
+    <form id="form">
+        <fieldset>
+        <legend>Get in touch</legend>
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Submit</button>
+        </fieldset>
+
+      <div class="h-captcha" data-captcha="true"></div>
+    </form>
+
+  </div>
+</section>
+
+<!-- SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const form = document.getElementById('form');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      formData.append("access_key", "8a2b9f17-c66e-4a2a-a23b-9bfa90db6cab");
+
+      const originalText = submitBtn.textContent;
+
+      submitBtn.textContent = "Sending...";
+      submitBtn.disabled = true;
+
+      try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: formData
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+              alert("Success! Your message has been sent.");
+              form.reset();
+          } else {
+              alert("Error: " + data.message);
+          }
+
+      } catch (error) {
+          alert("Something went wrong. Please try again.");
+      } finally {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+      }
+  });
+});
+</script>
+
+<script src="https://web3forms.com/client/script.js" async defer></script>
 
 </body>
 </html>
