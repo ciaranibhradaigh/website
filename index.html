@@ -365,6 +365,7 @@
 
     .flip-card-inner{
       position:relative;
+      min-height:420px;
       width:100%;
       height:100%;
       transition:transform 0.8s;
@@ -563,20 +564,6 @@
   </style>
 </head>
   
-<script>
-document.querySelectorAll(".flip-btn").forEach(button => {
-  button.addEventListener("click", () => {
-    button.closest(".flip-card").classList.add("flipped");
-  });
-});
-
-document.querySelectorAll(".back-btn").forEach(button => {
-  button.addEventListener("click", () => {
-    button.closest(".flip-card").classList.remove("flipped");
-  });
-});
-</script>
-  
 <body>
 
 <!-- NAV -->
@@ -759,6 +746,9 @@ document.querySelectorAll(".back-btn").forEach(button => {
             healthier ways of coping and relating.</p>
             <img src="adult_therapy.JPG">
             <button class="service-btn back-btn">Back</button>
+          </div>
+        </div>
+      </div>
         <div class="service-card reveal">
 
           <h3>Adolescent & Teen Therapy</h3>
@@ -928,5 +918,24 @@ document.addEventListener("DOMContentLoaded", () => {
       © 2026 Séimh Psychotherapy
     </p>
   </footer>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  document.querySelectorAll(".flip-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      button.closest(".flip-card").classList.add("flipped");
+    });
+  });
+
+  document.querySelectorAll(".back-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      button.closest(".flip-card").classList.remove("flipped");
+    });
+  });
+
+});
+</script>
+  
 </body>
 </html>
