@@ -522,29 +522,24 @@
   footer p{
     margin-bottom:10px;
   }
-.instagram-link {
+    .instagram-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ffffff, #3cb371);
-  color: #0f5132;
-  transition: all 0.3s ease;
   text-decoration: none;
-}
-.instagram-link:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(60, 179, 113, 0.6);
 }
 
 .instagram-icon {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+}
+
+.instagram-link:hover .instagram-icon {
+  stroke: #3cb371;
+  transform: scale(1.1);
 }
     
-
   /* ANIMATION */
   @keyframes fadeInUp {
     from {
