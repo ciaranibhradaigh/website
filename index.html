@@ -522,6 +522,28 @@
   footer p{
     margin-bottom:10px;
   }
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffffff, #3cb371);
+  color: #0f5132;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.instagram-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(60, 179, 113, 0.6);
+}
+
+.instagram-icon {
+  width: 26px;
+  height: 26px;
+}
+    
 
   /* ANIMATION */
   @keyframes fadeInUp {
@@ -994,6 +1016,23 @@ document.addEventListener("DOMContentLoaded", () => {
   
   <footer>
     <p>Séimh Counselling & Psychotherapy</p>
+
+      <a 
+    href="https://instagram.com/seimh_psychotherapy" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="instagram-link"
+    aria-label="Instagram"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      class="instagram-icon">
+            <path d="M7.75 2C4.574 2 2 4.574 2 7.75v8.5C2 19.426 4.574 22 7.75 22h8.5C19.426 22 22 19.426 22 16.25v-8.5C22 4.574 19.426 2 16.25 2h-8.5zm0 2h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4zm8.75 1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+    </svg>
+  </a>
+    
     <p>
       Neurodiverse Positive • LGBTQIA+ Affirming • Trauma Informed Support for Anxiety and Depression • 
       Perinatal and Post-Partum Mental Health Difficulties • Intergenerational Trauma • Family Estrangement •
